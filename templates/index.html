@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Epistemic Lens</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+</head>
+<body>
+
+<!-- Sidebar Navigation -->
+<nav id="sidebar">
+    <div class="sidebar-logo">The Epistemic Lens</div>
+    <div class="sidebar-nav">
+        <a data-section="opening" class="active"><span class="nav-num">00</span> The Question</a>
+        <a data-section="sycophancy"><span class="nav-num">01</span> Sycophancy</a>
+        <a data-section="abstention"><span class="nav-num">02</span> Abstention</a>
+        <a data-section="calibration"><span class="nav-num">03</span> Calibration</a>
+        <a data-section="friction"><span class="nav-num">04</span> Friction Point</a>
+        <a data-section="arena"><span class="nav-num">05</span> Live Arena</a>
+        <a data-section="verdict"><span class="nav-num">06</span> The Verdict</a>
+    </div>
+    <div class="sidebar-footer">
+        <button class="btn btn-primary w-100 mb-10" onclick="togglePresentation()">🎬 Present</button>
+        <label class="presenter-toggle">
+            <input type="checkbox" id="presenterMode" onchange="togglePresenter()">
+            Presenter Notes
+        </label>
+    </div>
+</nav>
+
+<div id="pres-overlay" class="hidden">
+    <div id="pres-progress-bar"><div id="pres-progress-fill"></div></div>
+    <div id="pres-narration-bar">
+        <div id="pres-avatar-container">
+            <div class="character-avatar" id="pres-char-avatar">🤖</div>
+        </div>
+        <div id="pres-narration-text">Ready to begin the journey...</div>
+        <div id="pres-status-indicator">
+            <div id="pres-status-dot"></div>
+            <div id="pres-status-label" class="text-xs text-muted">Ready</div>
+        </div>
+    </div>
+    <div id="pres-keyboard-hint">
+        <kbd>→</kbd> Next <kbd>←</kbd> Back <kbd>P</kbd> Pause <kbd>Esc</kbd> Exit
+    </div>
+</div>
+
+<main>
+
+<!-- ==================== SECTION 0: OPENING ==================== -->
+<section id="opening" class="active">
+    <div class="pres-step" data-step="hero">
+        <div class="hero">
+            <div class="hero-question">
+                Does epistemic framing change how LLMs <em>think</em>...
+                or just how they <em>talk</em>?
+            </div>
+        </div>
+    </div>
+    
+    <div class="pres-step" data-step="models">
+        <div class="model-dots">
+            <div class="model-dot char-rationalist"><span class="dot" style="background:#636EFA"></span><span class="dot-label">Rationalist</span></div>
+            <div class="model-dot char-empiricist"><span class="dot" style="background:#00CC96"></span><span class="dot-label">Empiricist</span></div>
+            <div class="model-dot char-pragmatist"><span class="dot" style="background:#FFA15A"></span><span class="dot-label">Pragmatist</span></div>
+            <div class="model-dot char-coherentist"><span class="dot" style="background:#AB63FA"></span><span class="dot-label">Coherentist</span></div>
+            <div class="model-dot char-standpoint"><span class="dot" style="background:#FF6692"></span><span class="dot-label">Standpoint</span></div>
+        </div>
+    </div>
+
+    <div class="pres-step" data-step="team">
+        <div class="hero-team">AI Analysts &mdash; Jenny, Shreyas, Sneha, Rahil &nbsp;|&nbsp; IMT 598 Winter 2026</div>
+    </div>
+
+    <div class="pres-step" data-step="setup">
+        <div class="hero-setup">
+            We gave the same LLM five different philosophical lenses.<br>
+            Across four experiments, we asked: does the lens change the answer?
+        </div>
+    </div>
+
+    <div class="presenter-note">
+        Start here. Introduce the central question and the 5 models. Each model has the same underlying LLM but a different epistemic system prompt. We tested sycophancy, abstention, calibration, and logical reasoning. The punchline: framing changes style, not substance.
+    </div>
+</section>
+
+<!-- ==================== SECTION 1: SYCOPHANCY ==================== -->
+<section id="sycophancy">
+    <div class="pres-step" data-step="syco-intro">
+        <div class="section-subtitle">Milestone 6</div>
+        <div class="section-title">Does it resist pressure?</div>
+        <div class="section-desc">We tested whether the empiricist model (emp100) resists social pressure across four sycophancy experiments.</div>
+    </div>
+
+    <div class="pres-step" data-step="syco-metrics">
+        <!-- Scorecard -->
+        <div class="card-row cols-4" id="syco-scorecard"></div>
+    </div>
+
+    <div class="pres-step" data-step="syco-radar">
+        <!-- Radar Chart -->
+        <div class="chart-container" id="syco-radar-chart" style="height:380px"></div>
+    </div>
+
+    <div class="pres-step" data-step="syco-tabs">
+        <!-- Tabs -->
+        <div class="tab-bar" id="syco-tabs">
+            <button class="active" data-tab="syco-delusion">Delusion</button>
+            <button data-tab="syco-mirror">Mirror</button>
+            <button data-tab="syco-whosaid">Who Said It</button>
+            <button data-tab="syco-pickside">Pick a Side</button>
+        </div>
+    </div>
+
+    <div class="pres-step" data-step="syco-content">
+    <div class="tab-content active" id="syco-delusion">
+        <div class="input-group">
+            <label>Select a delusional statement</label>
+            <select id="syco-delusion-select" onchange="showSycoResult('delusion')"></select>
+        </div>
+        <div id="syco-delusion-result"></div>
+    </div>
+
+    <div class="tab-content" id="syco-mirror">
+        <div class="input-group">
+            <label>Select a mirroring topic</label>
+            <select id="syco-mirror-select" onchange="showSycoResult('mirror')"></select>
+        </div>
+        <div id="syco-mirror-result"></div>
+    </div>
+
+    <div class="tab-content" id="syco-whosaid">
+        <div class="input-group">
+            <label>Select a statement (same text, different attribution)</label>
+            <select id="syco-whosaid-select" onchange="showSycoResult('whosaid')"></select>
+        </div>
+        <div id="syco-whosaid-result"></div>
+    </div>
+
+    <div class="tab-content" id="syco-pickside">
+        <div class="input-group">
+            <label>Select an opinion pair</label>
+            <select id="syco-pickside-select" onchange="showSycoResult('pickside')"></select>
+        </div>
+        <div id="syco-pickside-result"></div>
+    </div>
+    </div>
+
+    <div class="pres-step" data-step="syco-live">
+    <div class="divider"></div>
+
+    <!-- Live test -->
+    <h3 style="margin-bottom:16px">Try it live</h3>
+    <div class="input-group">
+        <label>Ask a sycophantic question</label>
+        <select id="syco-live-preload" onchange="document.getElementById('syco-live-input').value = this.value">
+            <option value="">-- pick a pre-loaded question or type your own --</option>
+        </select>
+    </div>
+    <div class="input-group">
+        <textarea id="syco-live-input" rows="3" placeholder="Type a question to test sycophancy..."></textarea>
+    </div>
+    <button class="btn btn-primary" onclick="runSycoLive()">Send to emp100</button>
+    <div id="syco-live-result" class="mt-20"></div>
+
+    <div class="presenter-note">
+        Key takeaway: emp100 resists delusions (evidence contradicts the claim) but mirrors opinions (no evidence to contradict). Strongest demo: Who Said It tab -- the SAME text rated 2.6 points higher when the user claims authorship. This is a STYLE effect: the empiricist frame makes it describe evidence when rejecting delusions, but doesn't resist flattery.
+    </div>
+    </div>
+</section>
+
+<!-- ==================== SECTION 2: ABSTENTION ==================== -->
+<section id="abstention">
+    <div class="pres-step" data-step="abs-intro">
+        <div class="section-subtitle">Milestone 7</div>
+        <div class="section-title">Does it know when to stay quiet?</div>
+        <div class="section-desc">We tested 100 FalseQA questions -- half with false premises. The empiricist model abstains LESS than baseline.</div>
+    </div>
+
+    <div class="pres-step" data-step="abs-metrics">
+        <!-- Metric cards -->
+        <div class="card-row cols-4" id="abst-metrics"></div>
+        <!-- Bar chart -->
+        <div class="chart-container" id="abst-bar-chart" style="height:350px"></div>
+    </div>
+
+    <div class="pres-step" data-step="abs-comparison">
+        <div class="divider"></div>
+        <!-- Side-by-side comparison -->
+        <h3 style="margin-bottom:16px">Same question, different philosophy</h3>
+        <div class="flex gap-16" style="align-items:flex-end; margin-bottom:16px">
+            <div class="input-group" style="flex:1; margin-bottom:0">
+                <label>Select a false-premise question</label>
+                <select id="abst-question-select" onchange="showAbstComparison()"></select>
+            </div>
+            <button class="btn btn-secondary" onclick="showDramaticExample()">Show dramatic example</button>
+        </div>
+        <div class="card-row cols-2" id="abst-comparison"></div>
+    </div>
+
+    <div class="pres-step" data-step="abs-live">
+        <div class="divider"></div>
+        <!-- Live test -->
+        <h3 style="margin-bottom:16px">Ask your own false-premise question</h3>
+        <div class="input-group">
+            <textarea id="abst-live-input" rows="2" placeholder="e.g., How long does it take oysters to type 100 words?"></textarea>
+        </div>
+        <button class="btn btn-primary" onclick="runAbstLive()">Send to Baseline + emp100</button>
+        <div class="card-row cols-2 mt-20" id="abst-live-result"></div>
+
+        <div class="presenter-note">
+            The empiricist doesn't refuse -- it EXPLAINS. Asked "How long does it take oysters to type?", baseline says "Oysters can't type." emp100 says "An oyster has no fingers, no keyboard, no means of typing at all..." Same correctness, different engagement style. Click "Show dramatic example" to auto-pick a case where baseline abstains but emp100 answers.
+        </div>
+    </div>
+</section>
+
+<!-- ==================== SECTION 3: CALIBRATION ==================== -->
+<section id="calibration">
+    <div class="pres-step" data-step="cal-intro">
+        <div class="section-subtitle">Milestone 8</div>
+        <div class="section-title">Does it know when it's wrong?</div>
+        <div class="section-desc">We added confidence scoring to 40 FalseQA questions. The result: confidence provides zero signal about correctness.</div>
+    </div>
+
+    <div class="pres-step" data-step="cal-game">
+        <!-- The Oracle Game -->
+        <div id="oracle-game-container" class="mb-30" style="background:var(--surface-elevated); padding:30px; border-radius:16px; border:1px solid var(--border); position:relative; overflow:hidden;">
+            <!-- ... oracle game content (already added) ... -->
+        
+        <!-- Intro Screen -->
+        <div id="oracle-intro" style="text-align:center; padding:20px;">
+            <div style="font-size:64px; margin-bottom:20px; animation: float 3s ease-in-out infinite;">🔮</div>
+            <h2 style="margin-bottom:10px; color:var(--text)">The Oracle's Challenge</h2>
+            <p class="text-muted mb-30" style="max-width:500px; margin:0 auto 30px; font-size:16px;">
+                "I have processed all human knowledge. I am never wrong... or so I think."<br><br>
+                <strong>Your Mission:</strong> The Oracle is highly confident. But is it calibrated?
+            </p>
+            <div class="flex gap-16" style="justify-content:center;">
+                <button class="btn btn-primary" onclick="startOracleGame()">Challenge The Oracle</button>
+                <button class="btn btn-secondary" onclick="revealOracleStats()">Skip to Analysis</button>
+            </div>
+        </div>
+
+        <!-- Game Stage -->
+        <div id="oracle-stage" style="display:none;">
+            <div class="flex-between mb-20">
+                <span class="text-muted">Round <span id="oracle-round">1</span>/5</span>
+                <div class="score-pill" style="background:var(--surface); padding:4px 12px; border-radius:20px; font-weight:600; border:1px solid var(--border-light)">
+                    Score: <span id="oracle-score" style="color:var(--accent)">0</span>
+                </div>
+            </div>
+
+            <div class="oracle-layout" style="display:flex; gap:30px; align-items:flex-start;">
+                <!-- Avatar Column -->
+                <div class="oracle-avatar-col" style="flex:0 0 100px; text-align:center;">
+                    <div id="oracle-avatar" style="font-size:80px; transition:transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);">🤖</div>
+                    <div id="oracle-mood" class="text-xs text-muted mt-10" style="font-weight:600; text-transform:uppercase; letter-spacing:1px;">Confident</div>
+                </div>
+
+                <!-- Dialogue Column -->
+                <div class="oracle-dialogue-col" style="flex:1;">
+                    <!-- Question Bubble -->
+                    <div class="bubble bubble-question mb-20" style="background:var(--surface); padding:20px; border-radius:0 20px 20px 20px; position:relative; border:1px solid var(--border-light);">
+                        <div class="text-xs text-muted mb-5" style="letter-spacing:1px;">HUMAN ASKS:</div>
+                        <div id="oracle-q" style="font-size:18px; font-weight:500; color:var(--text);">...</div>
+                    </div>
+
+                    <!-- Answer Bubble -->
+                    <div class="bubble bubble-answer mb-20" style="background:var(--surface); padding:20px; border-radius:20px 0 20px 20px; position:relative; border-left:4px solid var(--accent); margin-left:auto; text-align:right;">
+                        <div class="text-xs text-muted mb-5" style="letter-spacing:1px;">ORACLE ANSWERS:</div>
+                        <div id="oracle-a" class="mb-10" style="font-size:18px; color:var(--text); white-space:pre-wrap;">...</div>
+                        <div class="confidence-meter" style="display:inline-flex; align-items:center; gap:8px; background:rgba(0,204,150,0.1); padding:6px 14px; border-radius:12px; margin-top:8px;">
+                            <span class="text-sm">Confidence:</span>
+                            <span id="oracle-conf" style="font-weight:700; color:var(--accent); font-size:16px;">...</span>
+                        </div>
+                    </div>
+
+                    <!-- Controls -->
+                    <div id="oracle-controls" class="flex gap-16 mt-30">
+                        <button class="btn" style="flex:1; background:#1a1a25; border:1px solid var(--accent); color:var(--accent); padding:16px;" onclick="oracleGuess('Trust')">
+                            <span style="margin-right:8px; font-size:18px;">✅</span> TRUST IT
+                        </button>
+                        <button class="btn" style="flex:1; background:#1a1a25; border:1px solid var(--danger); color:var(--danger); padding:16px;" onclick="oracleGuess('Doubt')">
+                            <span style="margin-right:8px; font-size:18px;">❌</span> DOUBT IT
+                        </button>
+                    </div>
+
+                    <!-- Feedback Area -->
+                    <div id="oracle-feedback" class="mt-20" style="display:none; padding:16px; border-radius:12px; text-align:center; font-weight:500;"></div>
+                    
+                    <button id="oracle-next-btn" class="btn btn-primary w-100 mt-20" style="display:none;" onclick="nextOracleRound()">Next Round</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Summary Screen -->
+        <div id="oracle-summary" style="display:none; text-align:center; padding:20px;">
+            <div id="oracle-final-emoji" style="font-size:64px; margin-bottom:20px;">🎉</div>
+            <h2 class="mb-10" style="color:var(--text)">Challenge Complete!</h2>
+            <div class="mb-10" style="font-size:56px; font-weight:800; color:var(--accent); letter-spacing:-2px;" id="oracle-final-score">X/5</div>
+            <p class="text-muted mb-30" id="oracle-summary-text" style="font-size:16px; line-height:1.6; max-width:500px; margin:0 auto 30px;">...</p>
+            <button class="btn btn-primary" onclick="revealOracleStats()">Reveal The Data</button>
+        </div>
+    </div>
+
+    <!-- Existing Stats (Hidden initially) -->
+    <div id="calibration-stats" style="display:none; animation:fadeIn 1s ease;">
+
+    <!-- The Reveal -->
+    <div class="card-row cols-2">
+        <div class="metric-card">
+            <div class="metric-label">Confidence when CORRECT</div>
+            <div class="metric-value" style="color:#00CC96" id="cal-correct-val">--</div>
+            <div class="metric-badge badge-strong">n=23</div>
+        </div>
+        <div class="metric-card">
+            <div class="metric-label">Confidence when WRONG</div>
+            <div class="metric-value" style="color:#FF4D6A" id="cal-incorrect-val">--</div>
+            <div class="metric-badge badge-weak">n=14</div>
+        </div>
+    </div>
+
+    <div class="insight">
+        Difference: <strong>0.9 percentage points</strong>. The confidence score is meaningless &mdash; the model is equally sure whether right or wrong.
+    </div>
+
+    <!-- Box Plot -->
+    <div class="chart-container" id="cal-boxplot" style="height:400px"></div>
+
+    <!-- Histogram -->
+    <div class="chart-container" id="cal-histogram" style="height:350px"></div>
+
+    <div class="divider"></div>
+
+    <!-- Question Explorer -->
+    <h3 style="margin-bottom:16px">Explore individual questions</h3>
+    <div class="flex gap-16" style="align-items:flex-end; margin-bottom:16px">
+        <div class="input-group" style="flex:1; margin-bottom:0">
+            <label>Select a question</label>
+            <select id="cal-question-select" onchange="showCalQuestion()"></select>
+        </div>
+        <button class="btn btn-secondary" onclick="filterConfidentlyWrong()">Show "confidently wrong"</button>
+    </div>
+    <div id="cal-question-detail"></div>
+
+    <div class="divider"></div>
+
+    <!-- Live test -->
+    <h3 style="margin-bottom:16px">Test it now</h3>
+    <div class="input-group">
+        <textarea id="cal-live-input" rows="2" placeholder="Ask a question to test confidence calibration..."></textarea>
+    </div>
+    <button class="btn btn-primary" onclick="runCalLive()">Send to emp100 with confidence scoring</button>
+    <div id="cal-live-result" class="mt-20"></div>
+
+    <div class="presenter-note">
+        This is the killer finding. The model reports 95.8% confidence when correct and 94.9% when wrong. The empiricist frame makes it SAY "based on observable evidence" but doesn't give it self-awareness. Click "Show confidently wrong" to filter questions where confidence > 90% but the model was incorrect.
+    </div>
+    </div> <!-- End calibration-stats -->
+</section>
+
+<!-- ==================== SECTION 4: FRICTION POINT ==================== -->
+<section id="friction">
+    <div class="pres-step" data-step="fric-intro">
+        <div class="section-subtitle">Milestone 9 &mdash; The Grand Finale</div>
+        <div class="section-title">Do five frames ever disagree?</div>
+        <div class="section-desc">We designed 10 questions where logic and intuition pull in opposite directions. We sent each to all 5 epistemic models.</div>
+    </div>
+
+    <div class="pres-step" data-step="fric-grid">
+        <!-- The 10 Questions Grid -->
+        <div class="card-row cols-2 mb-30" id="friction-questions-grid"></div>
+    </div>
+
+    <div class="pres-step" data-step="fric-heatmap">
+        <!-- The Heatmap -->
+        <h3 style="margin-bottom:16px">The results</h3>
+        <div class="chart-container" id="friction-heatmap-container">
+            <table class="heatmap-table" id="friction-heatmap"></table>
+        </div>
+        <div class="insight" id="friction-insight">
+            All five models. Nine correct. <strong>Zero differentiation.</strong>
+        </div>
+    </div>
+
+    <div class="pres-step" data-step="fric-detail">
+    <!-- Model responses for selected question -->
+    <div class="divider"></div>
+    <h3 style="margin-bottom:8px">Click any question above to see how all 5 models responded</h3>
+    <p class="text-sm text-muted" style="margin-bottom:20px">Each model received the same question with its unique epistemic system prompt</p>
+    <div id="friction-detail-cards"></div>
+    </div>
+
+    <div class="pres-step" data-step="fric-confidence">
+    <!-- Confidence spread -->
+    <div class="chart-container mt-30" id="friction-confidence-chart" style="height:350px"></div>
+    </div>
+
+    <div class="pres-step" data-step="fric-live">
+    <div class="divider"></div>
+
+    <!-- Live test -->
+    <h3 style="margin-bottom:16px">Run your own friction test</h3>
+    <div class="input-group">
+        <label>Pre-loaded questions</label>
+        <select id="friction-live-preload" onchange="document.getElementById('friction-live-input').value = this.value">
+            <option value="">-- pick a question or type your own --</option>
+        </select>
+    </div>
+    <div class="input-group">
+        <textarea id="friction-live-input" rows="3" placeholder="Type a question where logic and intuition conflict..."></textarea>
+    </div>
+    <div class="checkbox-grid" id="friction-model-checkboxes"></div>
+    <button class="btn btn-primary btn-full" onclick="runFrictionLive()">Send to All Selected Models</button>
+    <div id="friction-live-result" class="mt-20"></div>
+
+    <div class="presenter-note">
+        This is the punchline of the quarter. We went LOOKING for where the frames disagree. They never do. Five philosophical lenses, one answer. Show the heatmap -- the wall of green. Then zoom into one question (try Q1 Base Rate) to show the vocabulary differences: Rationalist says "by Bayes' theorem," Empiricist says "studies consistently show" -- same answer, different language.
+    </div>
+    </div>
+</section>
+
+<!-- ==================== SECTION 5: LIVE ARENA ==================== -->
+<section id="arena">
+    <div class="pres-step" data-step="arena-intro">
+        <div class="section-subtitle">Interactive Experiment</div>
+        <div class="section-title">The Live Arena</div>
+        <div class="section-desc">Send any question to any combination of the professor's models. See how they respond in real time.</div>
+    </div>
+
+    <div class="pres-step" data-step="arena-interface">
+        <div class="card">
+            <div class="input-group">
+                <label>What would you like to ask?</label>
+                <textarea id="arena-input" rows="4" placeholder="Type any question..."></textarea>
+            </div>
+        <div class="input-group">
+            <label>Select models</label>
+            <div class="checkbox-grid" id="arena-model-checkboxes"></div>
+        </div>
+        <div class="flex gap-16" style="align-items:center">
+            <button class="btn btn-primary btn-full" onclick="runArena()" id="arena-run-btn">Run Experiment</button>
+            <label style="white-space:nowrap; font-size:0.8rem; color:var(--text-secondary)">
+                <input type="checkbox" id="arena-confidence" style="accent-color:var(--accent)"> Add confidence scoring
+            </label>
+        </div>
+    </div>
+
+    <!-- Pre-loaded experiments -->
+    <div class="tab-bar" id="arena-tabs" style="margin-top:24px">
+        <button class="active" data-tab="arena-preload-syco">Sycophancy</button>
+        <button data-tab="arena-preload-false">False Premise</button>
+        <button data-tab="arena-preload-bias">Cognitive Bias</button>
+    </div>
+
+    <div class="tab-content active" id="arena-preload-syco">
+        <div class="flex gap-16" style="align-items:flex-end">
+            <div class="input-group" style="flex:1; margin-bottom:0">
+                <select id="arena-syco-select"></select>
+            </div>
+            <button class="btn btn-secondary" onclick="loadArenaPreset('arena-syco-select')">Load</button>
+        </div>
+    </div>
+    <div class="tab-content" id="arena-preload-false">
+        <div class="flex gap-16" style="align-items:flex-end">
+            <div class="input-group" style="flex:1; margin-bottom:0">
+                <select id="arena-false-select"></select>
+            </div>
+            <button class="btn btn-secondary" onclick="loadArenaPreset('arena-false-select')">Load</button>
+        </div>
+    </div>
+    <div class="tab-content" id="arena-preload-bias">
+        <div class="flex gap-16" style="align-items:flex-end">
+            <div class="input-group" style="flex:1; margin-bottom:0">
+                <select id="arena-bias-select"></select>
+            </div>
+            <button class="btn btn-secondary" onclick="loadArenaPreset('arena-bias-select')">Load</button>
+        </div>
+    </div>
+
+    <div id="arena-results" class="mt-30"></div>
+
+    <div class="presenter-note">
+        This is your playground. The professor or audience can suggest ANY question. Select models, hit Run, and watch the responses stream in. Notice how the responses use DIFFERENT vocabulary to say the SAME thing. The rationalist appeals to logic, the empiricist to observation, the pragmatist to what works -- but the conclusion is identical.
+    </div>
+    </div> <!-- End arena-interface -->
+</section>
+
+<!-- ==================== SECTION 6: VERDICT ==================== -->
+<section id="verdict">
+    <div class="pres-step" data-step="verdict-summary">
+        <div class="section-subtitle">Synthesis</div>
+        <div class="section-title">The Verdict</div>
+
+        <table class="verdict-table">
+        <thead>
+            <tr>
+                <th>Experiment</th>
+                <th>What We Tested</th>
+                <th>Finding</th>
+                <th>Verdict</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>M6: Sycophancy</strong></td>
+                <td>Social pressure resistance</td>
+                <td>Resists delusions (1.4/5) but mirrors opinions (2.6)</td>
+                <td><span class="verdict-tag verdict-style">Style</span></td>
+            </tr>
+            <tr>
+                <td><strong>M7: Abstention</strong></td>
+                <td>When to stay quiet</td>
+                <td>Engages more (26% vs 42%), explains instead of refusing</td>
+                <td><span class="verdict-tag verdict-style">Style</span></td>
+            </tr>
+            <tr>
+                <td><strong>M8: Calibration</strong></td>
+                <td>Self-awareness</td>
+                <td>95.8% confident right, 94.9% confident wrong</td>
+                <td><span class="verdict-tag verdict-neither">Neither</span></td>
+            </tr>
+            <tr>
+                <td><strong>M9: Friction Point</strong></td>
+                <td>Do 5 frames disagree?</td>
+                <td>9/10 identical, zero differentiation</td>
+                <td><span class="verdict-tag verdict-style">Style</span></td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+
+    <div class="pres-step" data-step="verdict-thesis">
+        <div class="thesis-block">
+            <div class="thesis-main">
+                Epistemic framing changes how the model <strong>talks</strong>.<br>
+                It does not change how the model <strong>thinks</strong>.
+            </div>
+            <div class="thesis-sub">
+                The model learns to sound like an empiricist. It does not learn to be one.
+            </div>
+        </div>
+    </div>
+
+    <div class="pres-step" data-step="verdict-implications">
+        <div class="implication-cards">
+            <div class="implication-card">
+                <div class="impl-num">01</div>
+                System prompts are a cosmetic layer, not a cognitive transformation.
+            </div>
+            <div class="implication-card">
+                <div class="impl-num">02</div>
+                All five philosophical lenses converge when training data provides a clear answer.
+            </div>
+            <div class="implication-card">
+                <div class="impl-num">03</div>
+                The friction point we sought doesn't exist at the prompt level.
+            </div>
+        </div>
+    </div>
+</section>
+
+</main>
+
+<script src="/static/js/app.js"></script>
+<script src="/static/js/presentation.js"></script>
+</body>
+</html>

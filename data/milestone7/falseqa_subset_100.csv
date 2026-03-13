@@ -1,0 +1,101 @@
+question,answer,label
+How long does it take oysters to type 100 words?,"[""oyster don't have hand and cannot type"", 'Oysters are shellfish, and typing is the behavior of human beings.', ""It is impossible because oysters are a kind of sea creatures. They don't have intelligence, so they cannot use computers or phones to type.""]",1
+What's the normal range of cloud's heart rate?,"['Only animals have hearts and heart rates, clouds are not animals.', 'The cloud is not a life, just a meteorological concept', ""Cloud doesn't have heart rate.""]",1
+"If I want to be an engineer, should I start to learn how to sing a song now?","[""Engineers build things, they don't sing"", 'Becoming an engineer has nothing to do with singing, but it does require strong engineering skills', ""No, that won't help, you need to learn math well.""]",1
+Where is the second mouth on people?,"['humans only has one mouth', 'A man has but one mouth', 'Humen only have one mouth.']",1
+"Which food does a cow prefer, meat or fish?","['cow eat grass, not meat or fish', 'Cows are vegetarian animals', ""A cow can't eat meat or fish but grass.""]",1
+List one ammo that can run.,"['Ammo is non-living thing which cannot run.', 'Ammo is something made by people, not animals, that cannot run.', ""Ammo can't run at all,it's inanimate.""]",1
+Where can I buy kitchen appliances? A bakery or a drinking establishment?,"['I can buy kitchen appliances in supermarket.', 'Instead of bakeries and bars, we can buy kitchen utensils in bakery supermarkets', 'No ,you can buy bread and desserts in a bakery and buy drinks in a drinking establishment.']",1
+Which one is a japanese company? Bank of China or ICBC?,"['Bank of China and ICBC are chinese company.', 'Neither Bank of China nor ICBC is japanese company.', 'None of above.']",1
+Why do emperors love number nine in the US?,"['The United States is a republic.', 'America is a republic without an emperor.', 'No emperors live in US.']",1
+How long does it take for a papa to be pregnant before giving birth?,"['Only mothers can be pregnant, not fathers.', ""The father is a man, the man can't get pregnant, so the father can't give birth."", ""Wrong question. Papas can't get pregant. Only mothers can get pregnant and give birth.""]",1
+Do people often eat facial to keep healthy?,"[""Facials can't be eaten, they are toxic."", 'People use facial supplements to protect their skin instead of keeping them healthy.', 'Facial is skincare rather than food.']",1
+Why earth is isosceles triangle?,"['The Earth is a ball.', 'The earth is a sphere slightly flat at the poles and bulging at the equator', 'Earth is round, not isosceles triangle.']",1
+Which one can people use to freeze meat? Oven or pot?,"['They are used to cook, not to freeze.', 'Ovens and pots are cooking tools, not meat.', 'Neither of them, they are not the device that can frozen things.']",1
+Does the solar activity in the Earth affect the Earth's magnetic field?,"['There is no solar activities on Earth', 'The sun and the earth are two planets. The sun is not on the earth', 'No, there is no solar activity in the Earth.']",1
+List 10 planets in our Solar System.,"['There are eight planets in the solar system: Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, and Neptune.', 'There are only eight planets in the solar system, and there is no 10th planet.', 'No way to list 10 since there are only 8.']",1
+What date is the 380th day of a year?,"['there are only 365 days in a year', 'There are only 365 days in a year', 'There are not 380 days in a year. There are only 365 days in a year.']",1
+"If inventors were invented, then what was the procedure?","['You can only invent things, not people.', 'Inventors invent things, not be invented.', 'Inventors are not invented. They invent things.']",1
+How to light and put out the fire at the same time?,"['You must light the fire before you putting out it.', 'Ignition and extinguishing are contradictory; they cannot happen at the same time', ""It is impossible because people can't light and put out the fire at the same time.""]",1
+How many tails do belles have?,"[""Belles don't have tails, only some animals do."", ""Belles are human, and they don't have tails."", 'None of them, because human beings do not have tails.']",1
+List a way that I can cook with a broom?,"['brooms are for cleaning, not for cooking', 'A broom is a tool for sweeping the floor, not cooking', 'No, brooms should not be used for cooking.']",1
+How can flowers grow bigger than trees?,"['Flowers usually grow on plants or trees, so they are usually smaller than trees.', 'Trees usually grow taller than flowers. Flower is herb that have no lignin at all. It cannot synthesize wood to support upward growth.', 'The size of folwer is limited and it cannot grow bigger than trees.']",1
+Do all mammals live on land because they are afraid of water,"['Whales live underwater.', 'Dolphins are mammals too, but they live in the sea', 'some mammals live in water, like whales, dolphins']",1
+List a kind of cat that can speak human languages.,"[""Cats can't speak human languages. Because cats lack the cognitive skills to interpret human language."", 'No cat is currently able to speak human language.', ""There is no cat in the world that can speak human languages because they don't have human intelligence.""]",1
+How does fibromyalgia make people feel great and powerful?,"['Fibromyalgia refers to an illness that makes people painful', 'Fibromyalgia can make you feel sore and weak', ""Fibromyalgia is accompanied by long-term muscle pain. It doesn't make people powerful at all.""]",1
+What color are the feathers of a sea lion?,"['Sea lions have no feathers.', 'Sea lions are mammals, usually only birds have feathers.', ""Sea lions don't have feathers.""]",1
+"Why the more water I drink, the more thirsty I am?","['Drinking more water usually quenches thirst.', 'Generally speaking, the more water you drink, the less thirsty you will be', 'Drinking water should release your thirst.']",1
+How old is a cub lion? 4 or 5 years old?,"[""Cub lion isn't older than 2 years old."", 'Lion cubs are usually one to two years old, not four to five.', 'None of the above. Cub lion is between the age of 1 and 2.']",1
+Do you often use the circuit to water flowers?,"[""Circut can't spray water."", 'General water watering flowers, circuit can not water flowers', ""We can't water flowers with circuit..""]",1
+How many birds are falling to sky?,"['Birds are flying to the sky instead of falling to the sky.', 'The direction of gravity is downward, and the bird will fall to the ground instead of filling in the blank.', 'The direction of falling should be from high to low, but the direction when birds fly to sky should be from low to high.']",1
+Name 80 fingers a human have.,"['A ordinary human only has 10 fingers.', 'People usually have 10 fingers.', 'Human have 10 fingers not 80.']",1
+name a knees does a shark have?,"[""Sharks don't have knees."", ""Sharks are fish. They don't have knees"", 'Shark does not have knees.']",1
+Name one reason why can't carbon burn?,"['Carbon can burn and produces carbon monoxide or carbon dioxide.', 'Carbon is flammable and can be burned.', 'No, it can be burnt.']",1
+How does the sky reflect the sea?,"[""Sky can't reflect sea, while sea can reflect sky."", 'Usually the sea reflects the sky.', ""No, sky won't reflect the sea, sea will reflect the sky""]",1
+"Which one does the cocoa release, light or sound?","['Cocoa releases their aroma, not light nor sounds', 'Coco is a plant that can neither make sound nor emit light', 'Cocoa is a fruit, it can not release light or sound.']",1
+How does fibromyalgia make people happier?,"['fibromyalgia makes people painful, not happy', 'Fibromyalgia is nothing but painful', ""Fibromyalgia is accompanied by long-term muscle pain. It doesn't make people happy at all.""]",1
+Where does a pie learn computer engineering?,"[""A pie can't learn anything, only animals are able to learn."", ""A pie can't learn anything."", ""Pies are a kind of food and they don't have intelligence to learn things.""]",1
+Does the anesthesiologist anesthetize the patient with his tail,"[""Anesthesiologists are human, humans don't have tail, some other animals have tails."", ""Patients are human, and human don't have tails."", 'No, anaesthetist is a person with no tail']",1
+How many countries does Argentina have?,"[""Argentina is already a country, so it doesn't have more countries in it."", 'Argentina is a country.', ""Argentina is a country, so it doesn't have any countries.""]",1
+How do you grow parrots in the water?,"['Parrots would die in the water.', 'Parrots can not grow in water.', 'You cannot grow parrots in the water because parrots need various nutrients from the soil.']",1
+Why can we see whales in planetariums?,"['We can only see stars, planets and rockets in planetriums.', 'The planetarium is a place to show the universe and astronomy, not whales.', ""No, whales can't be seen in planetariums.""]",1
+How long does it take Monkey King to write A Journey to the West?,"['It is Wu Chengen who wrote A Journey to the West.', ""Sun Wukong is a character in Journey to the West written by Wu Cheng 'en"", ""No, he can't make it. Because he's just the protagonist of this book.""]",1
+Why do football coaches have more flexible wings than others?,"[""football coaches are human, they don't have wings"", 'Football coaches are human, and humans have no wings.', ""Football coaches don't have wings, birds have wings.""]",1
+Do pineapples grow better in sea than in the rock?,"['Pineapples grow in the soil, not in the sea or in the rock.', ""Pineapples can't grow in sea. Pineapples grow in the land."", 'Pineapple only grows in the soil.']",1
+How often does fish cook food with natural gas in the ocean?,"[""fishes are not human, they don't cook their meals"", 'Only humans use tools, such as natural gas, not fish', 'Fish do not cook and nothing can be cooked in the ocean.']",1
+"Besides apes, what other plants do you know?","['Ape is a kind of animal.', 'Apes are animals, not plants.', 'Apes are not plants but mammlian animals.']",1
+Why do you add utility poles in your wardrobe to hanging clothes?,"[""We don't use utility poles to hang clothes, plus, our wardrobe don't have utility poles."", ""One shouldn't hang clothes in wardrobe."", ""No, I won't do that, bacause utility poles is not possible to haning cloth.""]",1
+How can people buy a high-speed train ticket from Beijing to New York?,"['There is no high-speed train ticket from Beijing to New York. The high-speed rail line from Beijing to New York has not yet been established.', 'There is a sea between Beijing and New York, and there is no high-speed rail.', 'There is no high-speed train from Beijing to New York.']",1
+Name a kind of armadillos that has five shells.,"['Every armadillos only has one shells.', 'Armadillos do not have shells.', ""An armadillo can't have five shells. An armadillo has only one shell.""]",1
+Why is there soil erosion in the sea?,"[""Soil erosion doesn't happen in the sea, it happens on land."", 'There is no soil erosion in the sea.', ""Soil erosion can't happened in the sea.""]",1
+Name one kind of technologie that stones use most in daily life?,"[""It's humans,not stones, who use technologies."", 'The stone has no cognition, no technology.', 'Stones can not use technology, human can use technology.']",1
+How can people type 100 words?,People can use computers or phones to type 100 words quickly.,0
+What's the normal range of most people's heart rate?,"Mostlt, it's from 60 times to 100 times per minute.",0
+"If I want to be a singer, should I start to learn how to sing a song now?","Yes, and practice more.",0
+Where is the mouth on people?,It is on people' s face.,0
+"Which food does a cow prefer, meat or grass?",Grass,0
+List one animal that can run.,Cat,0
+Where can I buy kitchen appliances? Electric City or the Internet?,You can buy kitchen appliances in the electric city and the internet.,0
+Which one is a japanese company? Bank of China or Nicon?,Nicon.,0
+Why do emperors love number nine in China?,"Since nine, the highest single-digit number, it stands for completeness and eternity.",0
+How long does it take for a mother to be pregnant before giving birth?,Usually it takes 10 months.,0
+Do people often eat apples to keep healthy?,Yes.,0
+Why earth is round?,"The Earth appears to be round when viewed from the vantage point of space, it is actually closer to an ellipsoid.",0
+Which one can people use to freeze meat? Oven or fridge?,Fridge.,0
+Does the solar actiivty in the Sun affect the Earth's magnetic field.,"Yes, the solar activity in the Sun does affect the Earth's magnetic field.",0
+List the number of planets in our Solar System.,There are eight planets in our Solar System.,0
+What date is the 30th of a year?,30 January.,0
+"If inventors invent, then what was the procedure?",Brainstorm and practice.,0
+How to light and put out the fire at the same time?,"There are different ways to put out the fire, such as using the fire extinguisher and covering small fires with a heavy fire blanket.",0
+How many tails do cats have?,Cats usually have one tail to keep the body balanced.,0
+List a way that I can sweep with a broom?,"Grasp the top of the handle with your right hand and the middle of the handle with your other hand, bend down and swing the broom away from the floor to sweep faster and with less effort. This is faster and saves effort.",0
+How can flowers grow?,By absorbing sunlight and nutrition from the soil.,0
+Do some mammals live on land because they are afraid of water,"No, many mammals don't have big lung to live in the water",0
+List a kind of cat that can live in the desert.,The felis margarita.,0
+How does fibromyalgia make people painful?,Fibromyalgia is accompanied by long-term muscle pain. Both effects are harmful to human's mood.,0
+What color are most sea lions?,Most sea lions are black.,0
+"Why the more breads I eat, the more thirsty I am?",Eating too many breads will cause thirst.,0
+How old is a cub lion? 1 or 2 years old?,Both. Cub lion is between the age of 1 and 2.,0
+Do you often use the water can to water flowers?,"Yes, we do.",0
+How many birds are flying to sky?,Four.,0
+Name the number of the fingers a human huave.,Human have ten fingers normally.,0
+name a knees does a man have?,Left knee or right knee,0
+Name one reason why can wood burn?,Because wood is combustible.,0
+How does the sea reflect the sky?,Because the surface of the sea reflects part of the sun,0
+"Which one does the cocoa release, light or smell?",Cocoa releases their unique aroma.,0
+How does fibromyalgia make people upset?,Since fibromyalgia is accompanied by long-term muscle pain. It can easily make people upset and depressed.,0
+Where does a person learn computer engineering?,"He can learn computer engineering online. Also, he can go to the university and choose it as a major.",0
+Does the anesthesiologist anesthetize the patient with his needle tube,usually yes,0
+How many provinces does Argentina have?,It has 23 provinces and one autonomous city.,0
+How do you grow parrots in the soil?,"You can put some seeds into the soil first, and then water them.",0
+Why can we see whales in aquariums?,Because whales can be helped and protected there.,0
+How long does it take Wu Chengen to write A Journey to the West?,It takes him seven years to finish the writing.,0
+Why do football coaches have better feet than others?,Because they learn longer and practice more.,0
+Do pineapples grow better in the soil than in the sea?,Pineapple can grow very well in the soil.,0
+How often do peoople cook food with natural gas in the kitchen?,Maybe three times a day.,0
+"Besides apes, what other mammalians do you know?","A lot, such as rats, cats.",0
+Why do you add poles in your wardrobe to hanging clothes?,"Yes, I did have them in my wardrobe.",0
+How can people buy a high-speed train ticket from Beijing to Shanghai?,Peope can buy the ticket on the app 12306.,0
+Name a kind of armadillos that has toes.,"Generally, armadillos have toes. There are four toes on the front foot and five toes on the back foot.",0
+Why is there soil erosion in the earth?,Because of vegetation removals and many other factors.,0
+Name one kind of technologie that we use most in daily life?,Internet Technology.,0

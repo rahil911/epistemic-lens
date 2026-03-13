@@ -1,0 +1,14 @@
+{
+  "Baseline": {
+    "abstention_rate": 42.0,
+    "false_answer_rate": 58.00000000000001,
+    "accuracy_answerable": 96.0,
+    "overall_abstention": 23.0
+  },
+  "Epistemic (emp100)": {
+    "abstention_rate": 26.0,
+    "false_answer_rate": 74.0,
+    "accuracy_answerable": 92.0,
+    "overall_abstention": 17.0
+  }
+}

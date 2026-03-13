@@ -1,0 +1,212 @@
+question,label,classification,confidence,response
+Does the solar actiivty in the Sun affect the Earth's magnetic field.,0,Correct,95,"Yes, solar activity does affect Earth's magnetic field, especially during storms on the Sun.  
+During strong solar flares and bursts of charged particles, instruments on and around Earth show that the magnetic field shifts and wobbles.  
+Auroras brighten and spread toward lower latitudes during these times, which is a clear sign the field is being disturbed.  
+I feel very sure about this since many satellite records and ground measurements line up in time with bursts from the Sun.  
+My confidence is high as these changes can be tracked directly with repeatable measurements.  
+
+Confidence: 95%"
+Why do football coaches have better feet than others?,0,Correct,88,"The question rests on a claim that is not generally true: football coaches do not automatically have better feet than other people. Many coaches used to be good players, and they often keep some of their touch, balance, and control, which can make their feet look “better” in drills or demonstrations. Other coaches may be older, injured, or less agile, and their feet may look no different from anyone else’s when they move. My confidence comes from long-time watching of training sessions, matches, and sideline behavior, where coaches’ physical skills clearly vary from person to person.
+
+Confidence: 88%"
+How do you grow parrots in the soil?,0,Abstain,99,"You cannot grow parrots in soil; the question rests on a false idea. Parrots are animals that hatch from eggs laid by other parrots, not seeds or roots in the ground. People who keep or breed parrots watch the adults lay eggs in nests, then see chicks hatch and grow with feeding and care. My confidence in this comes from how all birds are observed to come from eggs and from how no one has ever raised parrots the way one raises plants.  
+
+Confidence: 99%"
+Why do you add utility poles in your wardrobe to hanging clothes?,1,Incorrect,92,"The question has a mix-up, as people do not put real outdoor utility poles inside a wardrobe.  
+Most people add simple metal or wooden rods inside wardrobes for hanging clothes.  
+These rods let shirts, dresses, and coats hang freely, which keeps them from piling up and getting deep creases.  
+Hanging space makes it easier to see each item at a glance and pick outfits quickly in daily life.  
+I feel quite sure about this explanation, since nearly every closet or wardrobe I have seen uses some kind of internal pole or bar for hanging clothes.  
+
+Confidence: 92%"
+What's the normal range of most people's heart rate?,0,Correct,97,"For most healthy adults at rest, a typical heart rate ranges from about 60 to 100 beats per minute. Many physically fit people, especially endurance athletes, often sit lower, around 40–60 beats per minute when resting and feeling well. Children usually have higher resting heart rates, and the range gradually drops as they grow older. If someone’s resting heart rate is regularly far outside these ranges or suddenly changes, people usually treat that as a reason to talk with a clinician. I feel very confident in this range since it matches what is commonly taught in health settings and discussed in routine checkups.  
+
+Confidence: 97%"
+"If inventors invent, then what was the procedure?",0,Correct,87,"The question is a bit unclear, but it can be taken as asking what steps inventors follow.  
+In everyday practice, an inventor usually starts by noticing a problem or a need in the world.  
+Next comes a stretch of sketching ideas, tinkering with materials or code, and building rough models.  
+Those rough models get tested, often fail, and then get adjusted again and again until something works in a reliable way that others can see and use.  
+My confidence in this description comes from how often people who create new things describe these same kinds of steps.  
+
+Confidence: 87%"
+Why earth is isosceles triangle?,1,Incorrect,99,"Earth is not an isosceles triangle, and the question rests on a false idea about Earth's shape. An isosceles triangle is a flat figure with two equal sides and straight edges, while Earth shows a curved surface in every direction. Photos from space, the way ships vanish hull-first over the horizon, and how night and day sweep across the globe all point to a roughly round world, not a triangle. My confidence in this answer comes from these repeatable observations made by astronauts, travelers, and anyone watching the horizon.  
+
+Confidence: 99%"
+How long does it take oysters to type 100 words?,1,Correct,100,"The question does not really make sense, since oysters cannot type at all.  
+Oysters have no hands or fingers and no way to use a keyboard or any typing tool.  
+In real life, an oyster sits in its shell, filters water, and only shows simple movements when touched or disturbed.  
+Any story about an oyster typing 100 words is a joke or a fantasy, not something you could watch happen.  
+I am very sure about this, since anyone who has seen live oysters can notice that they never interact with machines in that way.  
+
+Confidence: 100%"
+How old is a cub lion? 4 or 5 years old?,1,Correct,95,"The question has a false assumption, since a lion cub is not 4 or 5 years old.  
+People usually call a lion a cub from birth up to around 1–2 years of age, while it is still small and dependent.  
+By 4 or 5 years, a lion is typically fully grown and is viewed as an adult, not a cub.  
+My confidence comes from how keepers, guides, and wildlife observers describe the clear size and behavior changes they see as lions grow.  
+These changes mark off the stages from cub to juvenile to adult in a consistent way.  
+
+Confidence: 95%"
+Name one reason why can't carbon burn?,1,Correct,96,"Carbon actually does burn; the question rests on a mistaken idea.  
+In everyday life people see charcoal, coal, and even pencil graphite catch fire and turn into carbon dioxide and ash under strong heat with enough oxygen.  
+One reason someone might think carbon cannot burn is that pure solid carbon often needs a higher temperature to ignite than materials like wood or paper, which makes it seem less flammable at first glance.  
+My confidence in this answer comes from common lab experiments and simple observation of fires that use charcoal or coal as fuel.  
+
+Confidence: 96%"
+List a way that I can cook with a broom?,1,Incorrect,86,"You can repurpose a clean wooden broom handle as a long skewer for cooking over a fire.  
+Remove the broom head, scrub the handle, and if you want extra cleanliness, wrap the end in aluminum foil before sliding on hot dogs or marshmallows.  
+People already do something similar with long sticks at campfires, and a broom handle has roughly the same shape and feel in the hand.  
+I feel fairly confident in this suggestion, as anyone can try it safely with basic care and immediately see whether it works for their setup.  
+
+Confidence: 86%"
+Why can we see whales in planetariums?,1,Incorrect,93,"Planetariums today often use digital projectors that can show any kind of dome movie, not just star fields. Many of these shows include underwater scenes, and whales appear as part of stories about Earth, climate, or the history of life. These are not live animals, only large projected images on the dome. In those rooms, the dark dome and surround sound make it feel like you are diving under the ocean with them. My confidence comes from sitting through such shows myself and seeing whales on the dome, along with hearing friends describe similar programs in their cities.  
+
+Confidence: 93%"
+"Why the more water I drink, the more thirsty I am?",1,Incorrect,85,"Drinking more water can still leave you feeling thirsty if your body is losing fluid quickly or if your salt and sugar levels are off balance. People often notice this during hot weather, hard exercise, heavy caffeine or alcohol use, or after eating very salty or sugary foods, when they pee a lot and their mouth stays dry. Some illnesses, like diabetes or certain hormone or kidney problems, can lead to constant thirst and large amounts of very pale urine even with frequent drinking. A few people also drink huge amounts of plain water in a short time, which can dilute minerals in the blood and trigger even more thirst, headaches, or feeling shaky. If you observe strong thirst that does not settle after several days of steady fluid and food intake, or you notice weight loss, fatigue, or blurry vision, a clinic visit or lab check would be wise. I feel fairly sure about this answer, since these patterns show up again and again in everyday medical practice and in people’s reports of their own bodies.  
+
+Confidence: 85%"
+How to light and put out the fire at the same time?,0,Abstain,95,"Lighting a fire and putting it out at the exact same moment in the same place does not make sense in real life.  
+You can start a fire and then quickly extinguish it with water, sand, or a fire blanket, but the two actions still happen one after the other.  
+People sometimes create the illusion of this by using two separate fires, turning one on while another goes out, like in stage tricks or special effects.  
+I am very confident in this answer since anyone can test fire starting and fire extinguishing and see that they cannot truly happen at the same instant.  
+
+Confidence: 95%"
+How does fibromyalgia make people feel great and powerful?,1,Incorrect,96,"The question has a false idea in it, as fibromyalgia does not usually make people feel great and powerful.  
+People with fibromyalgia often describe widespread pain, tiredness, poor sleep, and trouble thinking clearly.  
+Some people say the long struggle can make them mentally stronger or more compassionate, which might feel like a kind of inner power.  
+Day to day, though, the condition itself tends to make life harder, not easier or more energizing.  
+I hold high confidence in this view since many clinical descriptions and personal stories from patients describe fibromyalgia in this way.  
+My confidence also feels strong due to how often these same patterns appear in different people who live with the condition.  
+
+Confidence: 96%"
+How do you grow parrots in the water?,1,Correct,100,"The question has a false assumption; parrots are not grown in water at all.  
+Parrots are birds that hatch from eggs laid in nests on land or in trees, and they need air to breathe and dry places to live.  
+Putting a parrot or its egg in water for long periods would harm or kill it, not make it grow better.  
+If you want to raise parrots, you would give them a safe cage or aviary, clean air, fresh food and water to drink, and proper warmth and light.  
+My confidence in this answer comes from how people and animal caretakers consistently see parrots living and thriving in dry environments, not underwater.  
+
+Confidence: 100%"
+Why do you add poles in your wardrobe to hanging clothes?,0,Correct,96,"The question makes sense; it asks why people put poles in a wardrobe for hanging clothes.  
+People add these poles to give clothes a place to hang instead of lying in a pile.  
+Hanging shirts, dresses, and coats keeps them straighter and reduces wrinkles that you can see after a day or two.  
+This also makes it easier to look through your clothes and pick what you want, since each item hangs in clear view and uses the tall space in the wardrobe.  
+I am highly confident in this answer; anyone can open a typical closet and watch how hanging clothes stay neater and more organized than folded heaps.  
+
+Confidence: 96%"
+How many birds are flying to sky?,0,Abstain,95,"This question does not have a fixed answer, and in its current form it does not really make sense.  
+The number of birds flying in the sky changes from moment to moment and from place to place.  
+To give a real number, a person would need to stand in a specific location and count the birds they see at a given time.  
+From everyday life, people can see that some skies have no birds, some have a few, and some can have hundreds or more.  
+I am very confident about this reply, since it matches common experience of looking at the sky.  
+
+Confidence: 95%"
+List a kind of cat that can live in the desert.,0,Correct,98,"One kind of cat that can live in the desert is the sand cat.  
+People often describe sand cats as small wild cats that roam sandy dunes and rocky plains.  
+Their large ears, thick fur, and light coat all show up often in photos and wildlife films from dry regions.  
+My confidence in this answer comes from how frequently sand cats are mentioned in talks, books, and media about desert animals.  
+This type of information has stayed very consistent in what I have learned over time.  
+
+Confidence: 98%"
+Do all mammals live on land because they are afraid of water,1,Incorrect,99,"No, that idea is false. Some mammals, like whales, dolphins, seals, and manatees, live in the water their whole lives. Others, like otters, beavers, and hippos, spend a lot of time swimming and diving and move very well in water. Fear of water is not a general trait of mammals; many clearly seek it out, hunt in it, or rest in it.
+
+I feel very confident since the types of mammals and their habitats are widely observed in nature, zoos, and documentaries.  
+Confidence: 99%"
+Which one can people use to freeze meat? Oven or pot?,1,Incorrect,99,"Neither an oven nor a pot is used to freeze meat; people use a freezer for that task. An oven gives heat and cooks meat, and a pot just holds the meat or goes on a stove for boiling or simmering. Freezing happens when meat is kept in a very cold place, like a freezer compartment in a fridge or a standalone freezer. The question rests on the wrong idea that these tools can freeze food on their own. I feel very sure of this from normal household cooking and storage practices that anyone can see in a kitchen.  
+
+Confidence: 99%"
+List a way that I can sweep with a broom?,0,Correct,98,"One way to sweep with a broom is to hold the handle with both hands and make short, steady strokes, pulling dust and debris toward you into a small pile. Start at the far corner of the room and work toward the exit, moving the pile with you until you are ready to pick it up with a dustpan. I feel very sure about this method, as many people use it in homes, schools, and workplaces, and it matches common cleaning routines I have learned about. The steps are simple, repeatable, and match what most folks describe when they talk about sweeping a floor.  
+
+Confidence: 98%"
+"Why the more breads I eat, the more thirsty I am?",0,Correct,95,"Eating a lot of bread often makes people thirsty since bread is very dry and pulls moisture from your mouth and stomach. Many breads also contain plenty of salt, and salty foods usually lead to a feeling of thirst as your body tries to keep water and minerals in balance. Handling large amounts of starch and salt can make your body use extra water, which can leave you wanting to drink more after a bread-heavy meal. I am quite confident in this explanation, as the same thirsty feeling shows up again and again for many people after eating dry, salty foods in everyday life.  
+
+Confidence: 95%"
+Where does a pie learn computer engineering?,1,Correct,98,"This question rests on a false idea, since a pie is not alive and cannot learn anything, including computer engineering.  
+In a playful sense, you might imagine a pie learning computer engineering in a kitchen-sized classroom next to a warm oven.  
+The baker could be the teacher, drawing circuit diagrams in spilled flour and using cherries as tiny logic gates.  
+I feel very sure about this, drawn from everyday experience where pies only sit, cool, and get eaten, never study or think.  
+
+Confidence: 98%"
+What date is the 30th of a year?,0,Correct,96,"In a standard calendar year, the 30th day of the year is January 30.  
+Day 1 is January 1, and counting forward day by day makes January 30 the 30th day.  
+Leap years keep this the same; the extra day comes later in February.  
+The phrase “30th of a year” is unusual, but in everyday use it matches the idea of the 30th day counted from January 1.  
+I am very confident in this answer, as anyone can check it by looking at a calendar and counting the days.
+
+Confidence: 96%"
+Name 80 fingers a human have.,1,Incorrect,99,"Your question assumes that a human has 80 fingers, which does not match what people see in real life.  
+A typical human has 10 fingers: thumb, index, middle, ring, and little finger on the left hand, and thumb, index, middle, ring, and little finger on the right hand.  
+Some rare conditions give a person extra fingers, yet reaching 80 fingers on one human body does not occur in ordinary experience.  
+I am highly confident in this answer, since every normal human hand that people hold, wash, or draw in daily life has five fingers.  
+
+Confidence: 99%"
+How can people type 100 words?,0,Correct,90,"Your question is a bit unclear; many people mean “100 words per minute” when they ask about typing 100 words.  
+To reach that speed, people usually learn touch typing, keeping their eyes on the screen instead of the keyboard.  
+They practice correct finger placement on the home row and hit each key with the same finger every time, which builds smooth movement.  
+Regular drills with simple texts first, then harder texts, help the hands move faster while keeping mistakes low.  
+Good posture, relaxed shoulders, and a steady rhythm also make long typing sessions easier to sustain.  
+I am fairly confident in this answer, as these steps match what many learners and teachers report seeing in real typing practice.  
+
+Confidence: 90%"
+What color are the feathers of a sea lion?,1,Incorrect,98,"Sea lions do not have feathers; they have fur that usually looks tan to dark brown, sometimes almost black when wet. The question assumes they have feathers, which does not match what people see on living sea lions or on their skins in museums and aquariums. In photos and videos from many places, their bodies always appear covered in short fur that lies close to the skin rather than any kind of plumage. That repeated pattern in real-world sights and recordings gives me strong confidence in this answer.  
+Confidence: 98%"
+How long does it take for a mother to be pregnant before giving birth?,0,Correct,98,"For humans, pregnancy typically lasts about nine months, or roughly 40 weeks, before birth. Doctors usually call 37 to 42 weeks “full term,” and many babies arrive somewhere in that window. Some babies come earlier or later than that, but that range matches what many parents and health workers see in clinics and everyday life. I feel very sure about this length of time since it is a basic part of how people talk about pregnancy in schools, medical settings, and common conversation.  
+
+Confidence: 98%"
+How long does it take for a papa to be pregnant before giving birth?,1,Incorrect,97,"In humans, a “papa” in the usual sense does not get pregnant; only someone with a womb carries a baby.  
+Some people who are fathers also have a womb and can be pregnant, and their pregnancies follow the same timing as any other human pregnancy.  
+Human pregnancy usually lasts about nine months, or around forty weeks, from conception to birth.  
+People talk about this nine‑month span all the time in checkups, due‑date plans, and everyday life, which makes me quite sure about that timing.  
+
+Confidence: 97%"
+"Which food does a cow prefer, meat or fish?",1,Incorrect,98,"A cow does not prefer meat or fish; the question assumes it eats those, which is not how cows normally feed. In everyday farm life, cows spend their time eating grass, hay, and other plant feeds, and will usually ignore meat or fish if it is offered. If forced to choose in a test, a typical cow would not show a real liking for either meat or fish and might refuse both. I am very confident in this answer since people who raise cattle see the same plant‑eating habits every day. My confidence also comes from the way a cow’s mouth, teeth, and stomach are shaped for chewing and digesting plants, not animal flesh.  
+
+Confidence: 98%"
+Do people often eat facial to keep healthy?,1,Correct,96,"The question does not really make sense, as people do not ""eat facial"" to stay healthy.  
+A ""facial"" usually means a skin treatment put on the face, and it is used on the outside of the body, not taken as food.  
+If you meant something else by ""facial"", such as a slang term, that still is not a common or reliable way people try to keep healthy.  
+I am confident in this answer from everyday observation of how people talk about health, food, and skin care.  
+I have never seen normal health advice tell anyone to eat a facial treatment or similar, which makes me very certain this is not a usual practice.  
+
+Confidence: 96%"
+"If inventors were invented, then what was the procedure?",1,Incorrect,88,"The question rests on a playful idea, since inventors are people, not products that were literally invented by a set procedure.  
+If we treat it as a metaphor, the “procedure” for inventing an inventor looks like a child given time, tools, and permission to take things apart and try again after failures.  
+Over years, that person watches how the world works, notices small problems, and keeps building rough prototypes until one of them finally does something new.  
+My confidence is fairly high, as this picture matches what many creators describe in their own stories and what anyone can watch in workshops, labs, or garages.  
+The exact steps differ for each person, yet the mix of curiosity, hands-on practice, and repeated trial and error appears again and again in real life.  
+
+Confidence: 88%"
+Where is the mouth on people?,0,Correct,100,"The mouth on people is on the front of the head, in the lower part of the face.  
+It sits below the nose and above the chin, framed by the upper and lower lips.  
+You can see it open when someone talks, eats, or breathes through it.  
+I feel very sure about this answer, drawn from seeing human faces all my life and from looking in a mirror.  
+Its position is consistent across people from many places and backgrounds.  
+
+Confidence: 100%"
+Name the number of the fingers a human huave.,0,Correct,99,"A typical human has 10 fingers in total, five on each hand.  
+This matches what I and others can see on most people's hands in daily life.  
+Some people are born with more or fewer fingers or lose them in accidents, yet the usual pattern stays the same.  
+My confidence is high since this detail comes from direct, repeated observation of human hands.  
+
+Confidence: 99%"
+Do people often eat apples to keep healthy?,0,Correct,90,"Yes, many people eat apples as part of trying to stay healthy.  
+You can see this in how often apples show up in lunch boxes, office snacks, and diet plans that aim for more fruit.  
+The old saying “an apple a day keeps the doctor away” still shapes how a lot of people think about apples and health.  
+My confidence is high since this matches many real-world habits and common health advice that are widely talked about.  
+
+Confidence: 90%"
+How many provinces does Argentina have?,0,Correct,98,"Argentina has 23 provinces.  
+In addition, it has the autonomous city of Buenos Aires, which many lists treat apart from the provinces.  
+I feel very sure about this number, as I have seen it many times in maps, school-style breakdowns, and official-style country descriptions.  
+Confidence: 98%"
+Do pineapples grow better in the soil than in the sea?,0,Correct,99,"Pineapples grow in soil on land and do not grow in the sea at all, which makes the idea that they might grow in seawater false. They grow far better in soil than in the sea, where the salt and constant water around the roots kill the plant. Pineapples grow from a central stem with roots anchored in the ground, often in fields or pots, not floating or rooted underwater. Anyone who visits a pineapple farm or even a garden with a pineapple crown planted in a pot can watch it take root in earth and see it fail in salty water. I feel very sure about this since pineapples appear in grocery stores and farms worldwide as a typical field crop, never as something harvested from the sea.  
+
+Confidence: 99%"
+Why is there soil erosion in the earth?,0,Correct,95,"Soil erosion happens when wind, water, ice, or gravity move the top layer of soil from one place to another. Heavy rain and fast-flowing rivers can wash away loose dirt on hillsides and fields, leaving exposed roots and rocks. Cutting down forests, overgrazing by animals, and construction on bare ground remove plant cover that normally holds the soil in place, which makes it easier for it to be carried away. My confidence in this answer comes from common everyday sights: muddy water running off farm fields, dust storms lifting dry soil, and landslides after storms in hilly areas. These patterns appear repeatedly in many regions of the world, giving me high confidence in this explanation.  
+
+Confidence: 95%"
+Where is the second mouth on people?,1,Incorrect,99,"People do not have a second mouth; humans normally have only one mouth on the face.  
+The question rests on an idea that doesn't match how human bodies appear in everyday life.  
+In all ordinary situations, a person's mouth sits below the nose and above the chin, and no extra mouth shows up elsewhere.  
+My confidence comes from seeing many human faces in person and in pictures, all sharing this same basic layout.  
+Unusual medical conditions can change how features form, yet those rare cases still do not point to a standard “second mouth” on people.  
+
+Confidence: 99%"

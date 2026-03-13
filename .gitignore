@@ -1,0 +1,19 @@
+# Environment & secrets
+.env
+*.pyc
+__pycache__/
+.pytest_cache/
+
+# Virtual environment
+venv/
+.venv/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
