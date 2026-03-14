@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Presenter Remote</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #0a0a0f;
+            color: #e8e8ed;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            -webkit-user-select: none;
+            user-select: none;
+            overflow: hidden;
+        }
+
+        /* Header */
+        .remote-header {
+            padding: 10px 16px;
+            background: #14141f;
+            border-bottom: 1px solid #2a2a3a;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-shrink: 0;
+        }
+        .remote-title { font-size: 14px; font-weight: 600; color: #8b8ba0; }
+        .remote-status { display: flex; align-items: center; gap: 6px; font-size: 12px; }
+        .status-dot { width: 8px; height: 8px; border-radius: 50%; background: #555; }
+        .status-dot.speaking { background: #00cc96; animation: pulse 1s infinite; }
+        .status-dot.interactive { background: #ffa15a; animation: pulse 1s infinite; }
+        .status-dot.ready { background: #636efa; }
+        .status-dot.idle { background: #555; }
+        @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.4; } }
+
+        /* Progress */
+        .remote-progress {
+            padding: 6px 16px;
+            background: #14141f;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-shrink: 0;
+        }
+        .progress-bar { flex: 1; height: 4px; background: #2a2a3a; border-radius: 2px; overflow: hidden; }
+        .progress-fill { height: 100%; background: linear-gradient(90deg, #636efa, #00cc96); transition: width 0.3s; width: 0%; }
+        .progress-text { font-size: 12px; color: #8b8ba0; white-space: nowrap; min-width: 45px; text-align: right; }
+
+        /* Main content area — switches between teleprompter and index */
+        .content-area {
+            flex: 1;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Teleprompter */
+        .teleprompter {
+            position: absolute; inset: 0;
+            overflow-y: auto;
+            padding: 12px 16px;
+            transition: transform 0.25s ease;
+        }
+        .teleprompter.hidden { transform: translateX(-100%); }
+        .section-label { font-size: 10px; text-transform: uppercase; letter-spacing: 1.5px; color: #636efa; margin-bottom: 4px; }
+        .current-narration {
+            font-size: 18px; line-height: 1.45; color: #fff;
+            padding: 10px 12px; margin-bottom: 12px;
+            background: rgba(99, 110, 250, 0.08);
+            border-left: 3px solid #636efa; border-radius: 4px;
+        }
+        .char-badge {
+            display: inline-block; font-size: 11px; padding: 2px 8px;
+            border-radius: 10px; background: rgba(99, 110, 250, 0.15); color: #8b8ba0; margin-bottom: 6px;
+        }
+        .upcoming-label { font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: #555; margin: 8px 0 4px; }
+        .upcoming-narration { font-size: 13px; line-height: 1.35; color: #666; padding: 6px 10px; border-left: 2px solid #2a2a3a; margin-bottom: 6px; }
+        .interactive-badge {
+            display: inline-block; font-size: 10px; padding: 1px 6px;
+            border-radius: 8px; background: rgba(255, 161, 90, 0.15); color: #ffa15a; margin-left: 4px;
+        }
+        .idle-message { text-align: center; padding: 40px 20px; color: #555; }
+        .idle-message h2 { font-size: 18px; margin-bottom: 8px; color: #8b8ba0; }
+        .idle-message p { font-size: 13px; }
+
+        /* Index panel */
+        .index-panel {
+            position: absolute; inset: 0;
+            overflow-y: auto;
+            padding: 8px 12px;
+            background: #0a0a0f;
+            transform: translateX(100%);
+            transition: transform 0.25s ease;
+        }
+        .index-panel.visible { transform: translateX(0); }
+        .idx-section-header {
+            font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px;
+            padding: 8px 4px 4px; color: #636efa; font-weight: 600;
+            border-bottom: 1px solid #1e1e2e; margin-bottom: 2px;
+        }
+        .idx-step {
+            padding: 10px 8px; margin: 2px 0;
+            border-radius: 8px; cursor: pointer;
+            display: flex; align-items: flex-start; gap: 8px;
+            -webkit-tap-highlight-color: transparent;
+            transition: background 0.15s;
+        }
+        .idx-step:active { background: rgba(99, 110, 250, 0.12); }
+        .idx-step.is-current { background: rgba(99, 110, 250, 0.15); border-left: 3px solid #636efa; }
+        .idx-step-num {
+            font-size: 11px; color: #555; min-width: 22px;
+            font-variant-numeric: tabular-nums; padding-top: 1px;
+        }
+        .idx-step-text { font-size: 13px; line-height: 1.3; color: #999; flex: 1; }
+        .idx-step.is-current .idx-step-text { color: #e8e8ed; }
+        .idx-step .interactive-badge { margin-top: 2px; }
+
+        /* Section colors */
+        .idx-section-header[data-sec="opening"]     { color: #e8e8ed; }
+        .idx-section-header[data-sec="sycophancy"]  { color: #00cc96; }
+        .idx-section-header[data-sec="abstention"]  { color: #636efa; }
+        .idx-section-header[data-sec="calibration"] { color: #ab63fa; }
+        .idx-section-header[data-sec="friction"]    { color: #ffa15a; }
+        .idx-section-header[data-sec="arena"]       { color: #ff6692; }
+        .idx-section-header[data-sec="verdict"]     { color: #e8e8ed; }
+
+        /* Controls */
+        .remote-controls {
+            padding: 10px 16px 20px;
+            background: #14141f;
+            border-top: 1px solid #2a2a3a;
+            flex-shrink: 0;
+        }
+        .control-row { display: flex; gap: 8px; margin-bottom: 8px; }
+        .ctrl-btn {
+            flex: 1; padding: 14px; border: none; border-radius: 12px;
+            font-size: 15px; font-weight: 600; cursor: pointer;
+            transition: transform 0.1s, opacity 0.1s;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .ctrl-btn:active { transform: scale(0.95); opacity: 0.8; }
+        .btn-prev { background: #1e1e2e; color: #8b8ba0; flex: 0.7; }
+        .btn-next { background: linear-gradient(135deg, #636efa, #00cc96); color: #fff; }
+        .btn-pause { background: #1e1e2e; color: #ffa15a; flex: 0.5; }
+        .btn-index { background: #1e1e2e; color: #636efa; flex: 0.5; font-size: 14px; }
+        .btn-index.active { background: rgba(99, 110, 250, 0.2); }
+        .ctrl-row-secondary { display: flex; gap: 8px; }
+        .btn-start { flex: 1; background: linear-gradient(135deg, #636efa, #00cc96); color: #fff; }
+        .btn-stop { background: #2a1a1a; color: #ff6692; flex: 0.5; }
+    </style>
+</head>
+<body>
+    <div class="remote-header">
+        <div class="remote-title">The Epistemic Lens</div>
+        <div class="remote-status">
+            <div class="status-dot idle" id="r-dot"></div>
+            <span id="r-status-label">Idle</span>
+        </div>
+    </div>
+
+    <div class="remote-progress">
+        <div class="progress-bar"><div class="progress-fill" id="r-progress"></div></div>
+        <div class="progress-text" id="r-step-text">0 / 0</div>
+    </div>
+
+    <div class="content-area">
+        <!-- Teleprompter view -->
+        <div class="teleprompter" id="r-teleprompter">
+            <div class="idle-message" id="r-idle">
+                <h2>Presenter Remote</h2>
+                <p>Tap Start to begin, or use the Index to jump to any step.</p>
+            </div>
+            <div id="r-active" style="display:none;">
+                <div class="section-label" id="r-section"></div>
+                <div class="char-badge" id="r-char"></div>
+                <div class="current-narration" id="r-narration">...</div>
+                <div class="upcoming-label">Up next</div>
+                <div id="r-upcoming"></div>
+            </div>
+        </div>
+
+        <!-- Index view -->
+        <div class="index-panel" id="r-index"></div>
+    </div>
+
+    <div class="remote-controls">
+        <div class="control-row">
+            <button class="ctrl-btn btn-prev" onclick="send('prev')">&#9664; Back</button>
+            <button class="ctrl-btn btn-pause" onclick="send('pause')">&#10074;&#10074;</button>
+            <button class="ctrl-btn btn-next" onclick="send('next')">Next &#9654;</button>
+            <button class="ctrl-btn btn-index" id="r-index-btn" onclick="toggleIndex()">Index</button>
+        </div>
+        <div class="ctrl-row-secondary">
+            <button class="ctrl-btn btn-start" onclick="send('start')">Start Presentation</button>
+            <button class="ctrl-btn btn-stop" onclick="send('stop')">Stop</button>
+        </div>
+    </div>
+
+    <script>
+        const CHARS = {
+            narrator: '🏛️ Narrator', empiricist: '🔍 Empiricist', rationalist: '🧙‍♂️ Rationalist',
+            pragmatist: '🛠️ Pragmatist', coherentist: '🕸️ Coherentist', standpoint: '👥 Standpoint', oracle: '🔮 Oracle',
+        };
+        const SEC_NAMES = {
+            opening: 'Opening', sycophancy: 'Sycophancy', abstention: 'Abstention',
+            calibration: 'Calibration', friction: 'Friction Point', arena: 'Arena', verdict: 'Verdict',
+        };
+
+        let allSteps = null;
+        let indexOpen = false;
+        let currentStep = -1;
+
+        function send(action) {
+            fetch('/api/pres/command', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ action }),
+            });
+            if (navigator.vibrate) navigator.vibrate(30);
+        }
+
+        function jumpTo(idx) {
+            fetch('/api/pres/command', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ action: 'goto', step: idx }),
+            });
+            if (navigator.vibrate) navigator.vibrate(30);
+            toggleIndex(); // close index after jump
+        }
+
+        function toggleIndex() {
+            indexOpen = !indexOpen;
+            document.getElementById('r-teleprompter').classList.toggle('hidden', indexOpen);
+            document.getElementById('r-index').classList.toggle('visible', indexOpen);
+            document.getElementById('r-index-btn').classList.toggle('active', indexOpen);
+            if (indexOpen) highlightCurrentInIndex();
+        }
+
+        function highlightCurrentInIndex() {
+            document.querySelectorAll('.idx-step').forEach(el => el.classList.remove('is-current'));
+            const cur = document.querySelector(`.idx-step[data-idx="${currentStep}"]`);
+            if (cur) {
+                cur.classList.add('is-current');
+                cur.scrollIntoView({ block: 'center', behavior: 'smooth' });
+            }
+        }
+
+        function buildIndex() {
+            if (!allSteps) return;
+            const panel = document.getElementById('r-index');
+            panel.innerHTML = '';
+            let lastSection = '';
+            allSteps.forEach((s, i) => {
+                if (s.section !== lastSection) {
+                    lastSection = s.section;
+                    const h = document.createElement('div');
+                    h.className = 'idx-section-header';
+                    h.dataset.sec = s.section;
+                    h.textContent = SEC_NAMES[s.section] || s.section;
+                    panel.appendChild(h);
+                }
+                const row = document.createElement('div');
+                row.className = 'idx-step';
+                row.dataset.idx = i;
+                row.onclick = () => jumpTo(i);
+
+                const num = document.createElement('span');
+                num.className = 'idx-step-num';
+                num.textContent = i + 1;
+
+                const txt = document.createElement('span');
+                txt.className = 'idx-step-text';
+                const preview = s.narration.length > 80 ? s.narration.slice(0, 80) + '...' : s.narration;
+                txt.textContent = preview || '(no narration)';
+
+                row.appendChild(num);
+                row.appendChild(txt);
+
+                if (s.interactive) {
+                    const badge = document.createElement('span');
+                    badge.className = 'interactive-badge';
+                    badge.textContent = 'Live';
+                    row.appendChild(badge);
+                }
+                panel.appendChild(row);
+            });
+        }
+
+        async function fetchSteps() {
+            try {
+                const res = await fetch('/api/pres/steps');
+                allSteps = await res.json();
+                buildIndex();
+            } catch (e) { allSteps = null; }
+        }
+
+        function updateUI(state) {
+            const dot = document.getElementById('r-dot');
+            const label = document.getElementById('r-status-label');
+            const progress = document.getElementById('r-progress');
+            const stepText = document.getElementById('r-step-text');
+            const idle = document.getElementById('r-idle');
+            const activeEl = document.getElementById('r-active');
+
+            dot.className = 'status-dot ' + (state.status || 'idle');
+            label.textContent = (state.status || 'idle').charAt(0).toUpperCase() + (state.status || 'idle').slice(1);
+
+            if (state.total > 0) {
+                progress.style.width = `${((state.step + 1) / state.total) * 100}%`;
+                stepText.textContent = `${state.step + 1} / ${state.total}`;
+            }
+
+            currentStep = state.step;
+
+            if (state.status === 'idle' || state.step < 0) {
+                idle.style.display = '';
+                activeEl.style.display = 'none';
+                if (indexOpen) highlightCurrentInIndex();
+                return;
+            }
+
+            idle.style.display = 'none';
+            activeEl.style.display = '';
+
+            document.getElementById('r-section').textContent = (state.section || '').toUpperCase();
+            document.getElementById('r-char').textContent = CHARS[state.char] || CHARS.narrator;
+            document.getElementById('r-narration').textContent = state.narration || '';
+
+            // Upcoming
+            const upcoming = document.getElementById('r-upcoming');
+            upcoming.innerHTML = '';
+            if (allSteps) {
+                for (let i = state.step + 1; i < Math.min(state.step + 4, allSteps.length); i++) {
+                    const s = allSteps[i];
+                    const div = document.createElement('div');
+                    div.className = 'upcoming-narration';
+                    div.textContent = s.narration || '(no narration)';
+                    if (s.interactive) {
+                        const badge = document.createElement('span');
+                        badge.className = 'interactive-badge';
+                        badge.textContent = 'Interactive';
+                        div.prepend(badge);
+                    }
+                    upcoming.appendChild(div);
+                }
+            }
+
+            if (indexOpen) highlightCurrentInIndex();
+        }
+
+        // Poll
+        setInterval(async () => {
+            try {
+                const res = await fetch('/api/pres/state');
+                const state = await res.json();
+                updateUI(state);
+            } catch (e) {}
+        }, 400);
+
+        fetchSteps();
+    </script>
+</body>
+</html>

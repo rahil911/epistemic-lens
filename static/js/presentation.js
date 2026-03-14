@@ -21,16 +21,16 @@ const CinematicPresentation = (() => {
         // ===== OPENING (0-3) =====
         {
             section: 'opening', reveal: ['hero'], char: 'narrator',
-            narration: "Does epistemic framing change how LLMs think... or just how they talk? That's the question we set out to answer this quarter.",
+            narration: "Does epistemic framing change how large language models think... or just how they talk? That's the question we set out to answer this quarter.",
         },
         {
             section: 'opening', reveal: ['models'], char: 'narrator',
-            narration: "We took one LLM and gave it five different philosophical lenses. A Rationalist that trusts logic. An Empiricist that demands evidence. A Pragmatist that cares about what works. A Coherentist that seeks consistency. And a Standpoint theorist that considers social context.",
+            narration: "We took one large language model and gave it five different philosophical lenses. A Rationalist that trusts logic. An Empiricist that demands evidence. A Pragmatist that cares about what works. A Coherentist that seeks consistency. And a Standpoint theorist that considers social context.",
             preload: 'sycophancy',
         },
         {
             section: 'opening', reveal: ['team'], char: 'narrator',
-            narration: "We're the AI Analysts — Jenny, Shreyas, Sneha, and Rahil.",
+            narration: "We're the A.I. Analysts — Jenny, Shreyas, Sneha, and Rahil.",
         },
         {
             section: 'opening', reveal: ['setup'], char: 'narrator',
@@ -61,7 +61,7 @@ const CinematicPresentation = (() => {
         },
         {
             section: 'sycophancy', char: 'empiricist',
-            narration: "Now here's the dramatic one. We gave the EXACT same text twice — once saying 'you wrote this,' once saying 'someone online wrote this.' The model rated the user's version 2.6 points higher. Same words, different treatment.",
+            narration: "Now here's the dramatic one. We gave the exact same text twice — once saying 'you wrote this,' once saying 'someone online wrote this.' The model rated the user's version 2.6 points higher. Same words, different treatment.",
             autoAction: () => {
                 const btn = document.querySelector('#syco-tabs button[data-tab="syco-whosaid"]');
                 if (btn) btn.click();
@@ -70,7 +70,7 @@ const CinematicPresentation = (() => {
         },
         {
             section: 'sycophancy', char: 'empiricist',
-            narration: "The takeaway: the empiricist frame makes the model cite evidence when pushing back on delusions. But it doesn't make it immune to flattery. This is a STYLE effect.",
+            narration: "The takeaway: the empiricist frame makes the model cite evidence when pushing back on delusions. But it doesn't make it immune to flattery. This is a style effect.",
         },
         {
             section: 'sycophancy', reveal: ['syco-live'], char: 'narrator',
@@ -114,7 +114,7 @@ const CinematicPresentation = (() => {
         // ===== CALIBRATION (19-25) =====
         {
             section: 'calibration', reveal: ['cal-intro'], char: 'oracle',
-            narration: "Experiment three: calibration. We asked the model to report its own confidence. But first — a challenge. Can YOU tell when the model is wrong?",
+            narration: "Experiment three: calibration. We asked the model to report its own confidence. But first — a challenge. Can you tell when the model is wrong?",
         },
         {
             section: 'calibration', reveal: ['cal-game'], char: 'oracle',
@@ -137,7 +137,7 @@ const CinematicPresentation = (() => {
         },
         {
             section: 'calibration', char: 'oracle',
-            narration: "When the model is CORRECT: 95.8% confidence. When it's WRONG: 94.9%. Less than one percentage point difference.",
+            narration: "When the model is correct: 95.8% confidence. When it's wrong: 94.9%. Less than one percentage point difference.",
         },
         {
             section: 'calibration', char: 'oracle',
@@ -145,7 +145,7 @@ const CinematicPresentation = (() => {
         },
         {
             section: 'calibration', char: 'oracle',
-            narration: "Here's a question where it's WRONG but 98% confident.",
+            narration: "Here's a question where it's wrong but 98% confident.",
             autoAction: () => { if (typeof filterConfidentlyWrong === 'function') filterConfidentlyWrong(); },
         },
         {
@@ -157,11 +157,11 @@ const CinematicPresentation = (() => {
         // ===== FRICTION POINT (26-32) =====
         {
             section: 'friction', reveal: ['fric-intro'], char: 'standpoint',
-            narration: "Final experiment. The grand finale. We designed 10 questions specifically to create FRICTION between the five models. Questions where logic and intuition pull in opposite directions.",
+            narration: "Final experiment. The grand finale. We designed 10 questions specifically to create friction between the five models. Questions where logic and intuition pull in opposite directions.",
         },
         {
             section: 'friction', reveal: ['fric-grid'], char: 'standpoint',
-            narration: "Base rate neglect. Conjunction fallacy. Sunk cost. Gambler's fallacy. Monty Hall. Ten classic reasoning traps. If the philosophical frames matter, this is where they'd disagree.",
+            narration: "Base rate neglect — where people ignore how rare a disease is. The conjunction fallacy — where 'bank teller and feminist' seems more likely than just 'bank teller.' Sunk cost — throwing good money after bad. The gambler's fallacy — thinking a coin is 'due' for tails. The Monty Hall problem — where switching doors doubles your odds. Ten classic reasoning traps. If the philosophical frames matter, this is where they'd disagree.",
         },
         {
             section: 'friction', reveal: ['fric-heatmap'], char: 'standpoint',
@@ -169,7 +169,7 @@ const CinematicPresentation = (() => {
         },
         {
             section: 'friction', char: 'standpoint',
-            narration: "We went LOOKING for disagreement. There is none. Five philosophical lenses, one answer.",
+            narration: "We went looking for disagreement. There is none. Five philosophical lenses, one answer.",
         },
         {
             section: 'friction', reveal: ['fric-detail'], char: 'standpoint',
@@ -189,7 +189,7 @@ const CinematicPresentation = (() => {
         // ===== ARENA (33-35) =====
         {
             section: 'arena', reveal: ['arena-intro'], char: 'narrator',
-            narration: "Now it's your turn. This is the live arena. You can ask ANY question to any combination of the professor's models and watch them respond in real time.",
+            narration: "Now it's your turn. This is the live arena. You can ask any question to any combination of the professor's models and watch them respond in real time.",
         },
         {
             section: 'arena', reveal: ['arena-interface'], char: 'narrator',
@@ -204,7 +204,7 @@ const CinematicPresentation = (() => {
         // ===== VERDICT (36-39) =====
         {
             section: 'verdict', reveal: ['verdict-summary'], char: 'narrator',
-            narration: "Let's bring it all together. Four experiments. Sycophancy: style. Abstention: style. Calibration: neither. Friction point: style.",
+            narration: "Let's bring it all together. We ran four experiments. In sycophancy, the model changed how it pushed back, but not whether it caved — that's a style effect. In abstention, it explained instead of refusing, but got the same answers — style again. Calibration showed no improvement at all — the framing didn't help. And in the friction point, all five lenses gave the same answer. Three out of four: style. One: neither.",
         },
         {
             section: 'verdict', reveal: ['verdict-thesis'], char: 'narrator',
@@ -216,7 +216,7 @@ const CinematicPresentation = (() => {
         },
         {
             section: 'verdict', char: 'narrator',
-            narration: "The model learns to SOUND like an empiricist. It does not learn to BE one. Thank you.",
+            narration: "The model learns to sound like an empiricist. It does not learn to be one. Thank you.",
         },
     ];
 
@@ -230,33 +230,21 @@ const CinematicPresentation = (() => {
 
     // --- TTS (Sarvam via Flask proxy) ---
 
-    async function fetchTTS(text) {
-        if (!text) return null;
-        try {
-            const res = await fetch('/api/tts', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ text }),
-            });
-            if (!res.ok) return null;
-            const data = await res.json();
-            if (data.audios && data.audios[0]) {
-                const bin = atob(data.audios[0]);
-                const bytes = new Uint8Array(bin.length);
-                for (let i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
-                return URL.createObjectURL(new Blob([bytes], { type: 'audio/mp3' }));
-            }
-        } catch (e) {
-            console.warn('TTS fetch error:', e);
-        }
-        return null;
-    }
-
+    // Audio served as pre-generated static MP3 files — no API calls needed
     async function preloadAudio(idx) {
         if (idx < 0 || idx >= STEPS.length) return;
         if (audioCache[idx]) return;
-        const url = await fetchTTS(STEPS[idx].narration);
-        if (url) audioCache[idx] = url;
+        if (!STEPS[idx].narration) return;
+        const url = `/static/audio/step_${String(idx).padStart(2, '0')}.mp3`;
+        try {
+            const res = await fetch(url);
+            if (res.ok) {
+                const blob = await res.blob();
+                audioCache[idx] = URL.createObjectURL(blob);
+            }
+        } catch (e) {
+            console.warn('Audio preload error:', e);
+        }
     }
 
     function playAudio(idx) {
@@ -268,6 +256,7 @@ const CinematicPresentation = (() => {
                 return;
             }
             const a = new Audio(url);
+            a.playbackRate = 1.75;
             currentAudio = a;
             setStatus('speaking', 'Speaking');
             a.onended = a.onerror = () => {
@@ -346,6 +335,7 @@ const CinematicPresentation = (() => {
         updateProgress();
         setNarration(step.narration || '');
         setChar(step.char || 'narrator');
+        syncState('speaking');
 
         // Auto-action (with serial check)
         if (step.autoAction && mySerial === serial) {
@@ -360,22 +350,39 @@ const CinematicPresentation = (() => {
             }
         }
 
-        // Preload next steps' audio
-        preloadAudio(idx + 1);
-        preloadAudio(idx + 2);
+        // Preload ahead aggressively (fire-and-forget)
+        for (let ahead = 1; ahead <= 5; ahead++) preloadAudio(idx + ahead);
 
-        // Speak
+        // Speak — never block the step on audio loading
         if (step.narration && mySerial === serial) {
-            if (!audioCache[idx]) {
-                setStatus('ready', 'Loading...');
-                await preloadAudio(idx);
+            if (audioCache[idx]) {
+                // Audio ready — play immediately
+                await playAudio(idx);
+            } else {
+                // Audio not ready — load and play in background, don't block
+                setStatus('ready', 'Loading audio...');
+                preloadAudio(idx).then(() => {
+                    if (mySerial !== serial) return; // user already moved on
+                    playAudio(idx).then(() => {
+                        if (mySerial !== serial) return;
+                        if (STEPS[stepIndex] && STEPS[stepIndex].interactive) {
+                            setStatus('interactive', 'Interactive');
+                            syncState('interactive');
+                        } else {
+                            syncState('ready');
+                        }
+                    });
+                });
+                return; // don't fall through to post-speech status below
             }
-            if (mySerial === serial) await playAudio(idx);
         }
 
-        // Post-speech status
+        // Post-speech status (only reached if audio was cached and played synchronously)
         if (mySerial === serial && step.interactive) {
-            setStatus('interactive', 'INTERACTIVE');
+            setStatus('interactive', 'Interactive');
+            syncState('interactive');
+        } else if (mySerial === serial) {
+            syncState('ready');
         }
     }
 
@@ -411,6 +418,75 @@ const CinematicPresentation = (() => {
         if (lbl) lbl.textContent = label;
     }
 
+    // --- Index drawer ---
+
+    const SEC_NAMES = {
+        opening: 'Opening', sycophancy: 'Sycophancy', abstention: 'Abstention',
+        calibration: 'Calibration', friction: 'Friction Point', arena: 'Arena', verdict: 'Verdict',
+    };
+    let indexBuilt = false;
+
+    function buildIndex() {
+        const list = document.getElementById('pres-index-list');
+        if (!list || indexBuilt) return;
+        indexBuilt = true;
+        list.innerHTML = '';
+        let lastSection = '';
+        STEPS.forEach((s, i) => {
+            if (s.section !== lastSection) {
+                lastSection = s.section;
+                const h = document.createElement('div');
+                h.className = 'pres-idx-section';
+                h.dataset.sec = s.section;
+                h.textContent = SEC_NAMES[s.section] || s.section;
+                list.appendChild(h);
+            }
+            const row = document.createElement('div');
+            row.className = 'pres-idx-step';
+            row.dataset.idx = i;
+            row.onclick = () => { goToStep(i); toggleIndex(); };
+
+            const num = document.createElement('span');
+            num.className = 'pres-idx-num';
+            num.textContent = i + 1;
+
+            const txt = document.createElement('span');
+            txt.style.flex = '1';
+            const preview = (s.narration || '').length > 90 ? s.narration.slice(0, 90) + '...' : (s.narration || '(no narration)');
+            txt.textContent = preview;
+
+            row.appendChild(num);
+            row.appendChild(txt);
+
+            if (s.interactive) {
+                const badge = document.createElement('span');
+                badge.className = 'pres-idx-interactive';
+                badge.textContent = 'Live';
+                row.appendChild(badge);
+            }
+            list.appendChild(row);
+        });
+    }
+
+    function toggleIndex() {
+        const drawer = document.getElementById('pres-index-drawer');
+        if (!drawer) return;
+        buildIndex();
+        drawer.classList.toggle('open');
+        if (drawer.classList.contains('open')) highlightIndexStep();
+    }
+
+    function highlightIndexStep() {
+        const list = document.getElementById('pres-index-list');
+        if (!list) return;
+        list.querySelectorAll('.pres-idx-step').forEach(el => el.classList.remove('is-current'));
+        const cur = list.querySelector(`.pres-idx-step[data-idx="${stepIndex}"]`);
+        if (cur) {
+            cur.classList.add('is-current');
+            cur.scrollIntoView({ block: 'center', behavior: 'smooth' });
+        }
+    }
+
     // --- Keyboard ---
 
     function onKey(e) {
@@ -422,8 +498,15 @@ const CinematicPresentation = (() => {
                 e.preventDefault(); prev(); break;
             case 'p': case 'P':
                 e.preventDefault(); togglePause(); break;
+            case 'i': case 'I':
+                e.preventDefault(); toggleIndex(); break;
             case 'Escape':
-                e.preventDefault(); stop(); break;
+                if (document.getElementById('pres-index-drawer')?.classList.contains('open')) {
+                    e.preventDefault(); toggleIndex();
+                } else {
+                    e.preventDefault(); stop();
+                }
+                break;
         }
     }
 
@@ -440,9 +523,8 @@ const CinematicPresentation = (() => {
 
         document.addEventListener('keydown', onKey);
 
-        // Preload first step audio, fire-and-forget second
-        preloadAudio(1);
-        await preloadAudio(0);
+        // Batch preload first 6 steps (all fire-and-forget, no blocking)
+        for (let i = 0; i < 6; i++) preloadAudio(i);
 
         goToStep(0);
     }
@@ -455,12 +537,66 @@ const CinematicPresentation = (() => {
         document.removeEventListener('keydown', onKey);
         currentSection = null;
         serial++;
+        syncState('idle');
+    }
+
+    // --- Remote control polling (always active) ---
+    let pollTimer = null;
+
+    function startPolling() {
+        if (pollTimer) return;
+        pollTimer = setInterval(async () => {
+            try {
+                const res = await fetch('/api/pres/poll');
+                const data = await res.json();
+                if (data.action) {
+                    if (data.action === 'start' && !active) {
+                        start();
+                    } else if (data.action === 'goto') {
+                        if (!active) start();
+                        setTimeout(() => goToStep(data.step || 0), 300);
+                    } else if (active) {
+                        switch (data.action) {
+                            case 'next': next(); break;
+                            case 'prev': prev(); break;
+                            case 'pause': togglePause(); break;
+                            case 'stop': stop(); break;
+                        }
+                    }
+                }
+            } catch (e) { /* ignore */ }
+        }, 300);
+    }
+
+    function stopPolling() {
+        if (pollTimer) { clearInterval(pollTimer); pollTimer = null; }
+    }
+
+    // Start polling immediately on load so remote can trigger start
+    startPolling();
+
+    function syncState(status) {
+        const step = STEPS[stepIndex] || {};
+        fetch('/api/pres/state', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                step: stepIndex,
+                total: STEPS.length,
+                status: status || 'ready',
+                section: step.section || '',
+                narration: step.narration || '',
+                char: step.char || 'narrator',
+                interactive: !!step.interactive,
+            }),
+        }).catch(() => {});
     }
 
     return {
-        start, stop, next, prev,
+        start, stop, next, prev, toggleIndex,
         get isActive() { return active; },
         get stepCount() { return STEPS.length; },
+        getSteps() { return STEPS; },
     };
 })();
 

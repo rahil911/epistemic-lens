@@ -17,6 +17,10 @@ app = Flask(__name__)
 
 SARVAM_API_KEY = os.environ.get("SARVAM_API_KEY", "")
 
+# --- Presenter remote sync (in-memory, single presenter) ---
+_pres_commands = []   # queue of commands from remote
+_pres_state = {"step": -1, "status": "idle", "total": 0}
+
 
 @app.route("/")
 def index():
@@ -141,6 +145,67 @@ def text_to_speech():
         return jsonify(resp.json())
     else:
         return jsonify({"error": "TTS failed", "details": resp.text}), resp.status_code
+
+
+# --- Presenter Remote ---
+
+@app.route("/remote")
+def remote():
+    return render_template("remote.html")
+
+
+@app.route("/api/pres/command", methods=["POST"])
+def pres_command():
+    data = request.get_json()
+    action = data.get("action")
+    if action in ("next", "prev", "pause", "stop", "start"):
+        _pres_commands.append({"action": action})
+    elif action == "goto":
+        _pres_commands.append({"action": "goto", "step": data.get("step", 0)})
+    return jsonify({"ok": True})
+
+
+@app.route("/api/pres/poll")
+def pres_poll():
+    if _pres_commands:
+        return jsonify(_pres_commands.pop(0))
+    return jsonify({"action": None})
+
+
+@app.route("/api/pres/state", methods=["POST"])
+def pres_state_update():
+    data = request.get_json()
+    _pres_state.update(data)
+    return jsonify({"ok": True})
+
+
+@app.route("/api/pres/state")
+def pres_state_get():
+    return jsonify(_pres_state)
+
+
+@app.route("/api/pres/steps")
+def pres_steps():
+    """Return step metadata (narration, section, char, interactive) for the remote teleprompter."""
+    import re
+    path = os.path.join(os.path.dirname(__file__), "static", "js", "presentation.js")
+    with open(path) as f:
+        js = f.read()
+    # Extract STEPS array entries using regex — lightweight, no JS parser needed
+    steps = []
+    # Match each step block: section + char + narration (narration may contain single quotes)
+    for m in re.finditer(
+        r"section:\s*'([^']+)'.*?char:\s*'([^']+)'.*?narration:\s*\"(.*?)\"",
+        js, re.DOTALL
+    ):
+        narr = m.group(3).replace('\n', ' ').strip()
+        entry = {"section": m.group(1), "char": m.group(2), "narration": narr}
+        # Check if interactive: true follows nearby
+        pos = m.end()
+        snippet = js[pos:pos+100]
+        entry["interactive"] = "interactive: true" in snippet
+        steps.append(entry)
+    return jsonify(steps)
 
 
 if __name__ == "__main__":
